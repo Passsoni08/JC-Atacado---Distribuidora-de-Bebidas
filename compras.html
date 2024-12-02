@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>Compras</title>
+    <script>
+
+        
+        function adicionarAoCarrinho(preco) {
+
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+            //atualiza preço no carrinho
+            carrinho.push(preco);
+
+            //converte array em string
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+            alert("Produto adicionado ao carrinho!");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Produtos Disponíveis</h1>
+    </header>
+
+    <main class="produtos">
+
+        <div class="produto">
+            <img src="Imagens/heineken.jpeg">
+            <h2>Heineken Long Neck</h2>
+            <p>R$5,00</p>
+            <h4>Valor para 100unids</h4>
+            <button class="btn" onclick="adicionarAoCarrinho(500)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Imagens/redbull.jpeg">
+            <h2>RedBull Lata</h2>
+            <p>R$4,00</p>
+            <h4>Valor para 100unids</h4>
+            <button class="btn" onclick="adicionarAoCarrinho(400)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Imagens/coca1.jpeg">
+            <h2>Coca KS</h2>
+            <p>R$2,00</p>
+            <h4>Valor para 100unids</h4>
+            <button class="btn" onclick="adicionarAoCarrinho(200)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Imagens/pepsi.jpeg">
+            <h2>Pepsi Black</h2>
+            <p>R$2,00</p>
+            <h4>Valor para 100unids</h4>
+            <button class="btn" onclick="adicionarAoCarrinho(200)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Imagens/agua.jpeg">
+            <h2>Agua 340ml</h2>
+            <p>R$1,00</p>
+            <h4>Valor para 100unids</h4>
+            <button class="btn" onclick="adicionarAoCarrinho(100)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Imagens/gatorade.jpeg">
+            <h2>Gatorade</h2>
+            <p>R$2,00</p>
+            <h4>Valor para 100unids</h4>
+            <button class="btn" onclick="adicionarAoCarrinho(200)">Adicionar ao Carrinho</button>
+    </main>
+
+    <footer>
+        <a class="btn" href="carrinho.html">Ir ao Carrinho</a>
+    </footer>
+</body>
+</html>

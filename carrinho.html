@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <script>
+
+        function calcularTotal() {
+
+            //acessa os dados e retorna em formato de string
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+            //aqui é para acumular o valor e atualizar em preco
+            let total = carrinho.reduce((acc, preco) => acc + preco, 0);
+
+            document.getElementById("total-price").innerText = `R$ ${total.toFixed(2)}`;
+            return total;
+        }
+
+        function aplicarDesconto() {
+            let numero = parseInt(document.getElementById("desconto-numero").value);
+            let total = calcularTotal();
+            let desconto = 0;
+
+            //cakcular desconto
+
+            if ([3, 8, 23].includes(numero)) {
+                desconto = total * 0.30; 
+            } else if ([2, 21, 25, 44].includes(numero)) {
+                desconto = total * 0.15; 
+            } else {
+                desconto = total * 0.05;
+            }
+
+            let totalComDesconto = total - desconto;
+
+            document.getElementById("total-price").innerText = `R$ ${totalComDesconto.toFixed(2)}`;
+
+            //alerta atualizando valor do carrinho
+            alert(`Desconto aplicado! Total com desconto: R$ ${totalComDesconto.toFixed(2)}`);
+        }
+
+        //quando abre a pagina carinho mostra o valor total cakculado
+        window.onload = calcularTotal; 
+
+
+        //remove o item do local Storage
+        function finalizarCompra() {
+            alert("Compra finalizada com sucesso!");
+
+            localStorage.removeItem("carrinho"); 
+        }
+
+       
+    </script>
+</head>
+
+<body class="carrinho" id="carrinho">
+
+    <header>
+        <h1>Seu Carrinho</h1>
+    </header>
+
+    <main id="carrinho">
+
+        <p>Total: <span id="total-price">R$ 0,00</span></p>
+
+        <div class="carrinho2">
+
+            <label >Digite um número (1-100) para tentar um desconto:</label>
+
+            <input type="number" id="desconto-numero" min="1" max="100">
+
+            <button class="btn" onclick="aplicarDesconto()">Aplicar Desconto</button>
+        </div>
+
+        <button class="btn" onclick="finalizarCompra()" >Finalizar Compra</button>
+    </main>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/*Formatações gerais*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+
+header, footer {
+    background-color: #0e2536;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 16px 0;
+}
+
+header h1, footer a {
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*Index*/
+
+
+.principal{
+    
+    width: 100%;
+    background-repeat: no-repeat; 
+    background-position: center center; 
+}
+
+
+
+.produtos {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+/*botões*/
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px; 
+    text-align: center; 
+    text-decoration: none; 
+    color: white; 
+    background-color: #224f80; 
+    border-radius: 8px;
+    cursor: pointer; /* Cursor de mão */
+}
+
+.btn:hover {
+    background-color: #0f1720;
+    color: #ffffff;
+}
+
+
+/*Formulario*/
+
+.contato{
+    text-align: left;
+    padding-top: 20px; 
+}
+
+
+.contatoform {
+    max-width: 400px; 
+    margin: 50px auto;
+    padding: 20px; 
+    border: 1px solid rgb(144, 141, 141); 
+    border-radius: 8px;
+}
+
+
+.contatoform label {
+    font-weight: bold;
+    color: black; 
+}
+
+.contatoform input {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.contatoform button {
+    width: 100%; 
+    padding: 12px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: white; 
+    background-color: #007BFF; 
+    border-radius: 4px; 
+    cursor: pointer; /* Cursor de mão */
+}
+
+
+
+/* Carrinho */
+.carrinho {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carrinho h1 {
+    color: #83b3de;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.carrinho2 {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+
+
+
+
+
+
+
+
